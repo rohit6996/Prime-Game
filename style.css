@@ -120,4 +120,21 @@ body {
     margin-bottom: 15px;
     text-align: center;
   }
+  #startButton {
+    padding: 14px 32px;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  #startButton:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #3498db, #8eecf5);
+  }
   

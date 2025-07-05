@@ -1,39 +1,41 @@
 const grid = document.getElementById("grid");
+const timerElement = document.getElementById("timer");
+const doneWrapper = document.getElementById("doneWrapper");
+const startButton = document.getElementById("startButton");
 const popupOverlay = document.getElementById("popupOverlay");
 const popupMessage = document.getElementById("popupMessage");
-const timerElement = document.getElementById("timer");
 
 let primeCount = 0;
 let foundCount = 0;
 let timerInterval;
 let timeLeft = 15;
 
+// Show popup
 function showPopup(message, restart = false) {
   popupMessage.textContent = message;
   popupOverlay.style.display = "flex";
   popupOverlay.dataset.restart = restart;
-  clearInterval(timerInterval); // Stop timer on popup
+  clearInterval(timerInterval);
 }
 
+// Close popup and restart if needed
 function closePopup() {
   popupOverlay.style.display = "none";
   if (popupOverlay.dataset.restart === "true") {
-    generateGrid();
+    startGame(); // Go back to fresh game
   }
 }
 
-function isPrime(num) {
-  if (num < 2) return false;
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
-  }
-  return true;
+// Start Game: Show elements and generate grid
+function startGame() {
+  startButton.style.display = "none";
+  grid.style.display = "grid";
+  timerElement.style.display = "block";
+  doneWrapper.style.display = "block";
+  generateGrid();
 }
 
-function getRandomOdd() {
-  return Math.floor(Math.random() * 50) * 2 + 1;
-}
-
+// Timer logic
 function startTimer() {
   timeLeft = 15;
   timerElement.textContent = `⏱ Time Left: ${timeLeft}s`;
@@ -42,7 +44,6 @@ function startTimer() {
   timerInterval = setInterval(() => {
     timeLeft--;
     timerElement.textContent = `⏱ Time Left: ${timeLeft}s`;
-
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       showPopup("⏰ Time's up! Game will restart.", true);
@@ -50,6 +51,21 @@ function startTimer() {
   }, 1000);
 }
 
+// Prime check
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+// Generate random odd number
+function getRandomOdd() {
+  return Math.floor(Math.random() * 50) * 2 + 1;
+}
+
+// Generate grid and start timer
 function generateGrid() {
   grid.innerHTML = "";
   primeCount = 0;
@@ -90,6 +106,7 @@ function generateGrid() {
   }
 }
 
+// Done button logic
 function checkResult() {
   if (foundCount === primeCount) {
     showPopup("🏆 You found all the primes! You won!", true);
@@ -97,6 +114,3 @@ function checkResult() {
     showPopup(`🚫 You missed some! Found ${foundCount} of ${primeCount}.`, true);
   }
 }
-
-// Start game initially
-generateGrid();

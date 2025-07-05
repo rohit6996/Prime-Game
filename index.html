@@ -9,8 +9,25 @@
 </head>
 
 <body>
+    <div class="game-container">
+        <!-- Start Game Button -->
+        <div class="start-wrapper">
+            <button id="startButton" onclick="startGame()">▶ Start Game</button>
+        </div>
 
-    <!-- Popup Message Modal -->
+        <!-- Timer -->
+        <div id="timer" style="display: none;">⏱ Time Left: 15s</div>
+
+        <!-- Grid -->
+        <div class="grid" id="grid" style="display: none;"></div>
+
+        <!-- Done Button -->
+        <div class="button-wrapper" id="doneWrapper" style="display: none;">
+            <button id="doneButton" onclick="checkResult()">✔ Done</button>
+        </div>
+    </div>
+
+    <!-- Popup -->
     <div id="popupOverlay" class="popup-overlay">
         <div class="popup-box" id="popupBox">
             <p id="popupMessage">Message goes here</p>
@@ -18,20 +35,8 @@
         </div>
     </div>
 
-    <div class="game-container">
-        <div class="grid" id="grid"></div>
-
-        <!-- Done Button -->
-        <div class="button-wrapper">
-            <button id="doneButton" onclick="checkResult()">✔ Done</button>
-        </div>
-    </div>
-
-    <div id="messageBox"></div>
-    <div id="timer">⏱ Time Left: 15s</div>
-
-
     <script src="script.js"></script>
 </body>
+
 
 </html>
