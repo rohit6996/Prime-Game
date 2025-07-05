@@ -27,13 +27,19 @@
         </div>
     </div>
 
-    <!-- Popup -->
+    <!-- Popup Message Modal -->
     <div id="popupOverlay" class="popup-overlay">
         <div class="popup-box" id="popupBox">
             <p id="popupMessage">Message goes here</p>
-            <button onclick="closePopup()">OK</button>
+            <div class="popup-buttons">
+                <button onclick="restartGame()">Restart</button>
+                <button onclick="goHome()">🏠 Home</button>
+            </div>
         </div>
     </div>
+
+
+
 
     <script src="script.js"></script>
 </body>

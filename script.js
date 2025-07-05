@@ -8,7 +8,7 @@ const popupMessage = document.getElementById("popupMessage");
 let primeCount = 0;
 let foundCount = 0;
 let timerInterval;
-let timeLeft = 15;
+let timeLeft = 25; 
 
 // Show popup
 function showPopup(message, restart = false) {
@@ -33,12 +33,14 @@ function startGame() {
   timerElement.style.display = "block";
   doneWrapper.style.display = "block";
   generateGrid();
+  
+
 }
 
 // Timer logic
 function startTimer() {
-  timeLeft = 15;
-  timerElement.textContent = `⏱ Time Left: ${timeLeft}s`;
+    timeLeft = 25; 
+    timerElement.textContent = `⏱ Time Left: ${timeLeft}s`;
   clearInterval(timerInterval);
 
   timerInterval = setInterval(() => {
@@ -62,8 +64,10 @@ function isPrime(num) {
 
 // Generate random odd number
 function getRandomOdd() {
-  return Math.floor(Math.random() * 50) * 2 + 1;
-}
+    let num = Math.floor(Math.random() * 125) * 2 + 51; // range: 51 to 299
+    return num;
+  }
+  
 
 // Generate grid and start timer
 function generateGrid() {
@@ -76,7 +80,7 @@ function generateGrid() {
     const square = document.createElement("div");
     square.classList.add("square");
 
-    const randomNum = getRandomOdd();
+    const randomNum = getRandomOdd(); 
     square.textContent = randomNum;
 
     const prime = isPrime(randomNum);
@@ -114,3 +118,23 @@ function checkResult() {
     showPopup(`🚫 You missed some! Found ${foundCount} of ${primeCount}.`, true);
   }
 }
+
+
+
+
+function restartGame() {
+    popupOverlay.style.display = "none";
+    startGame(); // Restart immediately
+  }
+  
+  function goHome() {
+    popupOverlay.style.display = "none";
+    grid.style.display = "none";
+    timerElement.style.display = "none";
+    doneWrapper.style.display = "none";
+    startButton.style.display = "inline-block"; // Show start button again
+  }
+  
+
+  
+  
