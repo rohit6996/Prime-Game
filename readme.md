@@ -66,4 +66,4 @@ A fast-paced, logic-testing web game where you must find all the **prime numbers
 
 ## 📧 Credits
 
-Developed by [Your Name Here] — inspired by number puzzles and brain games.
+Developed by [Rohit] — inspired by Universit war [A Student's reality game show where students from prestigious universities battle to solve brain quizzes.]
