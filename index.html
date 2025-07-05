@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Game</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Popup Message Modal -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-box" id="popupBox">
+            <p id="popupMessage">Message goes here</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="grid" id="grid"></div>
+
+        <!-- Done Button -->
+        <div class="button-wrapper">
+            <button id="doneButton" onclick="checkResult()">✔ Done</button>
+        </div>
+    </div>
+
+    <div id="messageBox"></div>
+    <div id="timer">⏱ Time Left: 15s</div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
