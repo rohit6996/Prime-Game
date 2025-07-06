@@ -3,46 +3,84 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Prime Game</title>
+    <title>Prime Number Grid Game</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="game-container">
-        <!-- Start Game Button -->
-        <div class="start-wrapper">
-            <button id="startButton" onclick="startGame()">▶ Start Game</button>
-        </div>
 
-        <!-- Timer -->
-        <div id="timer" style="display: none;">⏱ Time Left: 15s</div>
+    <h1>Prime Number Grid Game</h1>
 
-        <!-- Grid -->
-        <div class="grid" id="grid" style="display: none;"></div>
+    <!-- Difficulty Selection -->
+    <div class="radio-inputs" id="difficultySection">
+        <h3 style="margin-bottom: 16px; color: #4a8f8f;">Select difficulty level</h3>
 
-        <!-- Done Button -->
-        <div class="button-wrapper" id="doneWrapper" style="display: none;">
-            <button id="doneButton" onclick="checkResult()">✔ Done</button>
-        </div>
+        <label>
+            <input name="difficulty" type="radio" value="easy" class="radio-input" checked />
+            <span class="radio-tile">
+                <span class="radio-icon">🟢</span>
+                <span class="radio-label">Easy<br><small>(300 ~ 500)</small></span>
+            </span>
+        </label>
+
+        <label>
+            <input name="difficulty" type="radio" value="normal" class="radio-input" />
+            <span class="radio-tile">
+                <span class="radio-icon">🟡</span>
+                <span class="radio-label">Normal<br><small>(500 ~ 1000)</small></span>
+            </span>
+        </label>
+
+        <label>
+            <input name="difficulty" type="radio" value="hard" class="radio-input" />
+            <span class="radio-tile">
+                <span class="radio-icon">🔴</span>
+                <span class="radio-label">Hard<br><small>(1000 ~ 3000)</small></span>
+            </span>
+        </label>
     </div>
 
-    <!-- Popup Message Modal -->
-    <div id="popupOverlay" class="popup-overlay">
-        <div class="popup-box" id="popupBox">
+
+    <!-- Start Button -->
+    <button id="startButton" onclick="startGame()">Start Game</button>
+
+    <!-- Show selected difficulty -->
+    <div id="difficultyLabel" style="display: none;"></div>
+
+    <!-- Timer -->
+    <div id="timer" style="display: none;">Time Left: 25s</div>
+
+    <p id="subrangeLabel" style="display: none; font-weight: bold;"></p>
+
+
+    <!-- Game Grid -->
+    <div class="grid" id="grid" style="display: none;"></div>
+
+
+
+
+    <!-- Done Button -->
+    <div class="button-wrapper" id="doneWrapper" style="display: none;">
+        <button id="doneButton" onclick="checkResult()">Done</button>
+    </div>
+
+    <!-- Popup Message Box -->
+    <div id="popupOverlay">
+        <div id="popupBox">
             <p id="popupMessage">Message goes here</p>
-            <div class="popup-buttons">
+            <div>
                 <button onclick="restartGame()">Restart</button>
-                <button onclick="goHome()">🏠 Home</button>
+                <button onclick="goHome()">Home</button>
             </div>
         </div>
     </div>
 
 
-
-
+    <!-- Link to JavaScript -->
     <script src="script.js"></script>
-</body>
 
+</body>
 
 </html>
