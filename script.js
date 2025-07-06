@@ -127,7 +127,7 @@ function generateGrid() {
         square.classList.add("disabled");
         square.style.pointerEvents = "none";
         square.dataset.clicked = "true";
-        square.style.fontSize = "32px";
+        // square.style.fontSize = "32px";
         foundCount++;
       } else {
         square.style.backgroundColor = "#d63031";
@@ -143,7 +143,7 @@ function generateGrid() {
 
 // Start 25-second countdown
 function startTimer() {
-  timeLeft = 25;
+  timeLeft = 500;
   timerElement.textContent = `⏱ Time Left: ${timeLeft}s`;
   clearInterval(timerInterval);
 
