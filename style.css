@@ -314,3 +314,47 @@
   }
 
 
+  .square {
+    width: 80px;
+    height: 80px;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .square-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .square.flipped .square-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .square-front,
+  .square-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 12px;
+    font-weight: bold;
+  }
+  
+  .square-front {
+    background-color: #f1f1f1;
+  }
+  
+  .square-back {
+    background-color: #00b894;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  

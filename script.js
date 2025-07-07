@@ -97,6 +97,7 @@ function generateGrid() {
   } else {
     min = 1000; max = 3000;
   }
+  
 
   // Get valid subrange with at least 25 odd numbers
   const { subMin, subMax, oddNumbers } = getValidSubrange(min, max);
