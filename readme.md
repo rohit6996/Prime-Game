@@ -19,13 +19,14 @@ A fast-paced, logic-testing web game where you must find all the **prime numbers
 
 ## 🚀 How to Play
 
-1. Click the **Start Game** button.
-2. A 5×5 grid will appear filled with **random odd numbers (50–300)**.
-3. You have **25 seconds** to:
+1.Select the Difficulty level (Easy | Normal | Hard)
+2. Click the **Start Game** button.
+3. A 5×5 grid will appear filled with **random odd numbers according to your selected difficulty.
+4. You have **25 seconds** to:
    - Identify all **prime numbers**
-   - Click them (they’ll turn green with ✓)
+   - Click them (they’ll turn green )
    - Click **✔ Done** before the timer ends
-4. ❌ Clicking a non-prime or running out of time ends the game.
+5. ❌ Clicking a non-prime or running out of time ends the game.
 
 ---
 
