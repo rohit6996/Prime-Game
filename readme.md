@@ -27,6 +27,8 @@ A fast-paced, logic-testing web game where you must find all the **prime numbers
    - Click them (they’ll turn green )
    - Click **✔ Done** before the timer ends
 5. ❌ Clicking a non-prime or running out of time ends the game.
+6.  Aim to add middle grid ? to guess the remaining prime number
+
 
 ---
 
